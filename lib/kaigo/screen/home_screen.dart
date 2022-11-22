@@ -68,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
              DataModel items =
    DataModel.fromJson(data[index]);
    final DateTime newDate = DateTime.parse(items.date);
-  final DateFormat formatter = DateFormat('yyyy-MM-dd');
+  final DateFormat formatter = DateFormat('yyyy/MM/dd');
   final String formatted = formatter.format(newDate);
               return ListTile(
                 leading:

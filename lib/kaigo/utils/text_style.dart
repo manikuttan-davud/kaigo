@@ -24,6 +24,7 @@ TextStyle get tsS14C0xW400 => const TextStyle(
       fontSize: 14,
       color: Color(0xFF303030),
       fontWeight: FontWeight.w400,
+      fontFamily: 'NotoSansJP'
     );
 
 TextStyle get tsS12C0xW400 => const TextStyle(

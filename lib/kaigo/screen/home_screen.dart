@@ -147,9 +147,12 @@ class PenaltyItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
      // horizontalTitleGap: 5.w,
-      leading: penaltyiItemDetail.isIcon == true
-          ? const LeadingIcon()
-          : LeadingIcon2(points: penaltyiItemDetail.penaltyPoints),
+      leading: Padding(
+        padding:  EdgeInsets.only(left: 10.w),
+        child: penaltyiItemDetail.isIcon == true
+            ? const LeadingIcon()
+            : LeadingIcon2(points: penaltyiItemDetail.penaltyPoints),
+      ),
       title:  Padding(
         padding: EdgeInsets.only(top: 13.h,left: 10.w),
         child: Text(

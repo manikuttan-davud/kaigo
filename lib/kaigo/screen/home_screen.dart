@@ -27,9 +27,13 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(children: [
-            const TotalPenaltyPointsWidget(),
+            Padding(
+              padding: EdgeInsets.only(top: 32.h, bottom: 26.h),
+              child: const TotalPenaltyPointsWidget(),
+            ),
             Column(
               children: List.generate(data.length, (index) {
+
                 DataModel items = DataModel.fromJson(data[index]);
                 var date = _formatDate(items: items, index: index);
                 return PenaltyItem(penaltyiItemDetail: items, date: date);
@@ -142,20 +146,25 @@ class PenaltyItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+     // horizontalTitleGap: 5.w,
       leading: penaltyiItemDetail.isIcon == true
           ? const LeadingIcon()
           : LeadingIcon2(points: penaltyiItemDetail.penaltyPoints),
-      title: Padding(
-        padding: EdgeInsets.only(top: 13.h, right: 236.w),
+      title:  Padding(
+        padding: EdgeInsets.only(top: 13.h,left: 10.w),
         child: Text(
-          date,
-          style: tsS12C0xW400,
+            date,
+            style: tsS12C0xW400,
+          ),
+      ),
+      
+      subtitle: Padding(
+        padding: EdgeInsets.only(top: 5.h,left: 11.w),
+        child: Text(
+          penaltyiItemDetail.text,
+          style: tsS14C0xW400,
         ),
       ),
-      subtitle: Text(
-        penaltyiItemDetail.text,
-        style: tsS14C0xW400,
-      ),
-    );
+          );
   }
 }

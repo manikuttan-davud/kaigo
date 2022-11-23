@@ -26,7 +26,7 @@ class LeadingIcon extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-                left: 7.w, right: 7.32.w, bottom: 8.99.h, top: 5.w),
+                left: 7.w, right: 7.32.w, bottom: 8.99.h, top: 5.h),
             child: SvgPicture.asset('assets/svg/Vector (5).svg'),
           ),
           Padding(

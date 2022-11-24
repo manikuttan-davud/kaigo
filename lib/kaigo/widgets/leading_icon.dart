@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,31 +12,21 @@ class LeadingIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.only(left: 24.w,top: 16.h),
-      child: Stack(
-        children: [
-          Container(
-            width: 31.w,
-            height: 31.h,
-            decoration: BoxDecoration(
-                color: colorEE5F40,
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(width: 1.w, color: colorEE5F40)),
-          ),
-          Padding(
-            padding: EdgeInsets.only(
-                left: 7.w, right: 7.32.w, bottom: 8.99.h, top: 5.h),
-            child: SvgPicture.asset('assets/svg/Vector (5).svg'),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 14.w, top: 12.h),
-            child: SvgPicture.asset('assets/svg/Vector (7).svg'),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 18.68.h, left: 14.w, bottom: 12.32.h),
-            child: SvgPicture.asset('assets/svg/Vector.svg'),
-          )
-        ],
+      padding: EdgeInsets.only(left: 24.w, top: 16.h),
+      child: Container(
+        width: 31.w,
+        height: 31.w,
+        decoration: BoxDecoration(
+            color: colorEE5F40,
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(width: 1.w, color: colorEE5F40)),
+        child: Stack(
+          children: [
+            Center(child: SvgPicture.asset('assets/svg/Vector (5).svg')),
+            Center(child: SvgPicture.asset('assets/svg/Vector (7).svg')),
+            Center(child: SvgPicture.asset('assets/svg/Vector.svg')),
+          ],
+        ),
       ),
     );
   }
@@ -53,7 +42,7 @@ class LeadingIcon2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 24.w,top: 16.h),
+      padding: EdgeInsets.only(left: 24.w, top: 16.h),
       child: Stack(
         children: [
           Container(
@@ -80,4 +69,3 @@ class LeadingIcon2 extends StatelessWidget {
     );
   }
 }
-

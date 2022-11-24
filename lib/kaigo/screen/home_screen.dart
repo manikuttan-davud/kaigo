@@ -16,12 +16,15 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  String penaltyPoints = '8p';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        //TODO: CORRECT THE SHADOW
         backgroundColor: colorFAFAFA,
         leading: const BackButton(),
+        //TODO: CHANGE TEXT BUTTON COLOR
         actions: const [Textbutton()],
       ),
       body: SafeArea(
@@ -29,29 +32,17 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(children: [
             Padding(
               padding: EdgeInsets.only(top: 32.h, bottom: 26.h),
-              child: const TotalPenaltyPointsWidget(),
+              child: const TotalPenaltyPointsWidget(
+                penaltyPoints: '8',
+              ),
             ),
             Column(
               children: List.generate(data.length, (index) {
-
                 DataModel items = DataModel.fromJson(data[index]);
                 var date = _formatDate(items: items, index: index);
                 return PenaltyItem(penaltyiItemDetail: items, date: date);
               }),
             ),
-            // ListView.separated(
-            //     shrinkWrap: true,
-            //     itemBuilder: ((context, index) {
-            //       DataModel items = DataModel.fromJson(data[index]);
-            //       var date = _formatDate(items: items, index: index);
-            //       return PenaltyItem(penaltyiItemDetail: items, date: date);
-            //     }),
-            //     separatorBuilder: ((context, index) {
-            //       return const Divider(
-            //         color: colorBABABA,
-            //       );
-            //     }),
-            //     itemCount: data.length)
           ]),
         ),
       ),
@@ -67,8 +58,10 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class TotalPenaltyPointsWidget extends StatelessWidget {
+  final String penaltyPoints;
   const TotalPenaltyPointsWidget({
     super.key,
+    required this.penaltyPoints,
   });
 
   @override
@@ -82,7 +75,7 @@ class TotalPenaltyPointsWidget extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              '8p',
+              "$penaltyPoints\p",
               style: tsS26C0xW700,
               textAlign: TextAlign.center,
             ),
@@ -146,28 +139,28 @@ class PenaltyItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-     // horizontalTitleGap: 5.w,
+      // horizontalTitleGap: 5.w,
       leading: Padding(
-        padding:  EdgeInsets.only(left: 10.w),
+        padding: EdgeInsets.only(left: 10.w),
         child: penaltyiItemDetail.isIcon == true
             ? const LeadingIcon()
             : LeadingIcon2(points: penaltyiItemDetail.penaltyPoints),
       ),
-      title:  Padding(
-        padding: EdgeInsets.only(top: 13.h,left: 10.w),
+      title: Padding(
+        padding: EdgeInsets.only(top: 13.h, left: 10.w),
         child: Text(
-            date,
-            style: tsS12C0xW400,
-          ),
+          date,
+          style: tsS12C0xW400,
+        ),
       ),
-      
+
       subtitle: Padding(
-        padding: EdgeInsets.only(top: 5.h,left: 11.w),
+        padding: EdgeInsets.only(top: 5.h, left: 11.w),
         child: Text(
           penaltyiItemDetail.text,
           style: tsS14C0xW400,
         ),
       ),
-          );
+    );
   }
 }

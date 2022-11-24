@@ -20,13 +20,10 @@ class LeadingIcon extends StatelessWidget {
             color: colorEE5F40,
             borderRadius: BorderRadius.circular(10),
             border: Border.all(width: 1.w, color: colorEE5F40)),
-        child: Stack(
-          children: [
-            Center(child: SvgPicture.asset('assets/svg/Vector (5).svg')),
-            Center(child: SvgPicture.asset('assets/svg/Vector (7).svg')),
-            Center(child: SvgPicture.asset('assets/svg/Vector.svg')),
-          ],
-        ),
+        child: Padding(
+          padding: const EdgeInsets.all(7),
+          child: SvgPicture.asset('assets/svg/Alert Icon.svg'),
+        )
       ),
     );
   }
@@ -47,7 +44,7 @@ class LeadingIcon2 extends StatelessWidget {
         children: [
           Container(
             width: 31.w,
-            height: 31.h,
+            height: 31.w,
             decoration: BoxDecoration(
                 color: points.contains('+')
                     ? const Color.fromRGBO(18, 200, 113, 0.1)
@@ -58,7 +55,7 @@ class LeadingIcon2 extends StatelessWidget {
                     color: points.contains('+') ? color12C871 : colorEE5F40)),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 3.w, top: 6.h),
+            padding: EdgeInsets.only(left: 5.w, top: 9.h),
             child: Text(
               '${points}p',
               style: points.contains('+') ? tsS12CgreenW500 : tsS12C0xW500,

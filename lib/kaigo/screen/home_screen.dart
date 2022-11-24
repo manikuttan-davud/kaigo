@@ -21,10 +21,11 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        //TODO: CORRECT THE SHADOW
+        
+        shadowColor: color88A0BB,
         backgroundColor: colorFAFAFA,
         leading: const BackButton(),
-        //TODO: CHANGE TEXT BUTTON COLOR
+        //TODO:ISSUE IN COLOR(SVG IMAGE)
         actions: const [Textbutton()],
       ),
       body: SafeArea(
@@ -40,7 +41,15 @@ class _HomeScreenState extends State<HomeScreen> {
               children: List.generate(data.length, (index) {
                 DataModel items = DataModel.fromJson(data[index]);
                 var date = _formatDate(items: items, index: index);
-                return PenaltyItem(penaltyiItemDetail: items, date: date);
+                return Column(
+                  children: [
+                     Divider(thickness: 0.3.w,color: colorBABABA ,),
+                    PenaltyItem(penaltyiItemDetail: items, date: date,
+                    ),
+                   
+                  ],
+                );
+                
               }),
             ),
           ]),
@@ -51,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   _formatDate({required items, required index}) {
     final DateTime newDate = DateTime.parse(items.date);
-    final DateFormat formatter = DateFormat('yyyy/MM/dd');
+    final DateFormat formatter = DateFormat('yyyy / MM / dd');
     final String date = formatter.format(newDate);
     return date;
   }
@@ -75,9 +84,10 @@ class TotalPenaltyPointsWidget extends StatelessWidget {
         child: Column(
           children: [
             Text(
+              
               "$penaltyPoints\p",
               style: tsS26C0xW700,
-              textAlign: TextAlign.center,
+              //textAlign: TextAlign.center,
             ),
             SizedBox(
               height: 5.h,
@@ -122,6 +132,7 @@ class BackButton extends StatelessWidget {
       width: 8.w,
       height: 16.h,
       fit: BoxFit.scaleDown,
+      
     );
   }
 }

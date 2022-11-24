@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:kaigo_project/kaigo/utils/colors.dart';
 
@@ -32,6 +32,7 @@ TextStyle get tsS12C0xW400 => const TextStyle(
       fontSize: 12,
       color: Color(0x45484848),
       fontWeight: FontWeight.w400,
+      fontFamily: primaryFont
     );
 
 TextStyle get tsS12C0xW500 => const TextStyle(

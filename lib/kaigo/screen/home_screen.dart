@@ -127,12 +127,12 @@ class BackButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(
-      'assets/svg/second.svg',
+    return SizedBox(
       width: 8.w,
       height: 16.h,
-      fit: BoxFit.scaleDown,
-      
+      child: const Icon(Icons.arrow_back_ios,
+      color:  color454545 ,
+      ),
     );
   }
 }

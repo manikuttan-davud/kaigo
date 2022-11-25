@@ -98,7 +98,7 @@ flutter:
          - asset: assets/fonts/NotoSansJP-Bold.otf 
            weight: 800
          - asset:  assets/fonts/NotoSansJP-Black.otf 
-           weight: 900
+           weight : 900
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

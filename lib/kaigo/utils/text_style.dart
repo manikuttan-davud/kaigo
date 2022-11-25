@@ -6,7 +6,7 @@ const String primaryFont = 'NotoSansJP';
 
 TextStyle get tsS14C0xW500 => const TextStyle(
       fontSize: 14,
-      color: Color(0xFF303030),
+      color: Color(0x70303030),
       fontWeight: FontWeight.w500,
     );
 

@@ -13,7 +13,7 @@ const Color color12C871 =  Color(0xFF12C871);
 
 const Color color88A0BB =  Color(0x1088A0BB);
 
-const Color color303030 =  Color(0x45303030);
+const Color color70303030 =  Color(0x70303030);
 
 const Color color454545 =  Color(0x45454545);
 

@@ -131,7 +131,7 @@ class BackButton extends StatelessWidget {
       width: 8.w,
       height: 16.h,
       child: const Icon(Icons.arrow_back_ios,
-      color:  color454545 ,
+      color: color70303030 ,
       ),
     );
   }
@@ -150,9 +150,10 @@ class PenaltyItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      contentPadding: EdgeInsets.zero,
       // horizontalTitleGap: 5.w,
       leading: Padding(
-        padding: EdgeInsets.only(left: 10.w),
+        padding: EdgeInsets.only(left: 24.w),
         child: penaltyiItemDetail.isIcon == true
             ? const LeadingIcon()
             : LeadingIcon2(points: penaltyiItemDetail.penaltyPoints),
